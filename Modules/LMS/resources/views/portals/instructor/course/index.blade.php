@@ -92,9 +92,6 @@
                                         'If You delete it,course and course related all data will be deleted permanently.',
                                     );
                                 }
-
-                                $currency = $course?->coursePrice?->currency ?? 'USD-$';
-                                 
                             @endphp
                             <tr>
                                 <td class="px-3.5 py-4">
@@ -135,7 +132,7 @@
                                         @if ($course?->courseSetting?->is_free)
                                             {{ translate('Free') }}
                                         @else
-                                            {{ $currencySymbol }}{{ $course?->coursePrice?->price }}
+                                            ${{ $course?->coursePrice?->price }}
                                         @endif
                                     @else
                                         {{ translate('Free') }}

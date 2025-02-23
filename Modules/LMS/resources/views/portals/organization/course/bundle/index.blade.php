@@ -1,7 +1,7 @@
 <x-dashboard-layout>
-    <x-slot:title> {{ translate('Bundle manage') }} </x-slot:title>
+    <x-slot:title> {{ translate('Bundled Courses') }} </x-slot:title>
     <!-- BREADCRUMB -->
-    <x-portal::admin.breadcrumb title="Course Bundle" page-to="Bundle"
+    <x-portal::admin.breadcrumb title="Bundled Course" page-to="Bundle"
         action-route="{{ route('organization.bundle.create') }}" />
 
 
@@ -26,7 +26,7 @@
             <x-portal::course.bundle.index :bundles=$bundles />
         </div>
     @else
-        <x-portal::admin.empty-card title="No bundle. Let's create a bundle."
-            action="{{ route('organization.bundle.create') }}" btnText="Create bundle" />
+        <x-portal::admin.empty-card title="No bundle Course Yet!"
+            action="{{ route('organization.bundle.create') }}" btnText="Create bundled Course" />
     @endif
 </x-dashboard-layout>

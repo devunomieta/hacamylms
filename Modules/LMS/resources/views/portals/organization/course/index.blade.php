@@ -16,7 +16,7 @@
 <x-dashboard-layout>
     <x-slot:title> {{ translate('Manage Course') }} </x-slot:title>
     <!-- BREADCRUMB -->
-    <x-portal::admin.breadcrumb title="Course list" page-to="Course"
+    <x-portal::admin.breadcrumb title="Course list" page-to="Courses"
         action-route="{{ route('organization.course.create') }}" />
 
     <x-portal::course.filter isOrganization="{{ $isOrganization }}" />
@@ -81,7 +81,7 @@
                             $title = $translations['title'] ?? ($course->title ?? '');
                             $instructors = $course->instructors ?? [];
                             $thumbnail =
-                                fileExists('lms/courses/thumbnails', $course->thumbnail) == true
+                                fileExists($folder = 'lms/courses/thumbnails', $fileName = $course->thumbnail) == true
                                     ? asset("storage/lms/courses/thumbnails/{$course->thumbnail}")
                                     : asset('lms/assets/images/placeholder/thumbnail612.jpg');
 
@@ -91,9 +91,6 @@
                                     'If You delete it,course and course related all data will be deleted permanently.',
                                 );
                             }
-
-                            $currency = $course?->coursePrice?->currency ?? 'USD-$';
-                             
                         @endphp
                         <tr>
                             <td class="px-3.5 py-4">
@@ -107,12 +104,12 @@
                                             {{ customDateFormate($course->created_at, $format = 'd M Y') }}</p>
                                         <h6 class="text-lg leading-none text-heading dark:text-white font-bold mb-1.5 line-clamp-1"
                                             title="{{ $title }}">
-                                            <a href="#">{{ substr($title, 0, 30) . '...' }}</a>
+                                            <a href="#">{{ substr($title, 0, 20) . '...' }}</a>
                                         </h6>
                                         @if (count($instructors) > 0)
                                             <div class="flex items-center gap-2">
                                                 <p class="font-normal text-xs text-gray-900">
-                                                    {{ translate('Instructors') }}
+                                                    {{ translate('Tutors') }}
                                                     -
                                                     @foreach ($instructors as $instructor)
                                                         @php
@@ -133,15 +130,14 @@
                                     @if ($course?->courseSetting?->is_free)
                                         {{ translate('Free') }}
                                     @else
-                                        {{ $currencySymbol }}{{ $course?->coursePrice?->price }}
+                                        ${{ $course?->coursePrice?->price }}
                                     @endif
                                 @else
                                     {{ translate('Free') }}
                                 @endif
                             </td>
                             <td class="px-3.5 py-4">
-                                <p> <b>{{ translate('Sales') }}</b>:
-                                    {{ $course?->courseSetting?->sale_count_number ?? 0 }}</p>
+                                <p>{{ $course?->courseSetting?->sale_count_number ?? 0 }}</p>
                             </td>
                             <td class="px-3.5 py-4">
                                 {{ $course?->enrollments?->count() }}

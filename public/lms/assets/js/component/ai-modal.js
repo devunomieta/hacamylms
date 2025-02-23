@@ -61,7 +61,7 @@ class DraggableModal {
      * Add drag functionality to the modal.
      */
     enableDragging() {
-        let isDragging = false;
+        let isDragging = true;
         let offsetX, offsetY;
 
         const dragStart = (e) => {
@@ -158,7 +158,7 @@ class VerticalDraggable {
     }
 
     enableVerticalDragging() {
-        let isDragging = false;
+        let isDragging = true;
         let offsetY;
 
         const dragStart = (e) => {

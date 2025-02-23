@@ -1,3 +1,8 @@
+@php
+    $isAdmin = isAdmin();
+    $isInstructor = isInstructor();
+    $isOrganization = isOrganization();
+@endphp
 @push('css')
     <link rel="stylesheet" href="{{ asset('lms/assets/css/vendor/tagmanager.css') }}" />
 @endpush
@@ -17,18 +22,21 @@
                 <i class="ri-image-2-line text-inherit"></i>
                 {{ translate('Images') }}
             </button>
-            <button type="button" class="stepper-step-btn">
-                <i class="ri-graduation-cap-line text-inherit"></i>
-                {{ translate('Education') }}
-            </button>
-            <button type="button" class="stepper-step-btn">
-                <i class="ri-tent-line text-inherit"></i>
-                {{ translate('Experience') }}
-            </button>
-            <button type="button" class="stepper-step-btn">
-                <i class="ri-shake-hands-line text-inherit"></i>
-                {{ translate('Top Skill') }}
-            </button>
+            @if (!$isOrganization)
+                <button type="button" class="stepper-step-btn">
+                    <i class="ri-graduation-cap-line text-inherit"></i>
+                    {{ translate('Education') }}
+                </button>
+            
+                <button type="button" class="stepper-step-btn">
+                    <i class="ri-tent-line text-inherit"></i>
+                    {{ translate('Experience') }}
+                </button>
+                <button type="button" class="stepper-step-btn">
+                    <i class="ri-shake-hands-line text-inherit"></i>
+                    {{ translate('Top Skill') }}
+                </button>
+            @endif
             <button type="button" class="stepper-step-btn">
                 <i class="ri-inbox-unarchive-line text-inherit"></i>
                 {{ translate('Extra') }}
@@ -44,13 +52,11 @@
     <x-portal::profile.basic-form action="{{ $action ?? '#' }}" />
 
     <x-portal::profile.media-form action="{{ $action ?? '#' }}" />
-
-    <x-portal::profile.education-form action="{{ $action ?? '#' }}" />
-
-    <x-portal::profile.experience-form action="{{ $action ?? '#' }}" />
-
-    <x-portal::profile.skill-form action="{{ $action ?? '#' }}" />
-
+    @if (!$isOrganization)
+        <x-portal::profile.education-form action="{{ $action ?? '#' }}" />
+        <x-portal::profile.experience-form action="{{ $action ?? '#' }}" />
+        <x-portal::profile.skill-form action="{{ $action ?? '#' }}" />
+    @endif
     <x-portal::profile.extra-information-form action="{{ $action ?? '#' }}" />
 </div>
 

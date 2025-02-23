@@ -2,16 +2,13 @@
     $user = authCheck()?->userable;
     $translations = parse_translation($user);
 
-    $backendSetting = get_theme_option(key: 'backend_general') ?? null;
-    $currency = $backendSetting['currency'] ?? 'USD-$';
-     
 @endphp
 
 <x-dashboard-layout>
     <x-slot:title> {{ translate('Dashboard') }} </x-slot:title>
     <div class="grid grid-cols-12 gap-x-4">
         <!-- Start Instructor Profile -->
-        <div class="col-span-full lg:col-span-4 card p-0">
+        <div class="col-span-full lg:col-span-12 card p-0">
             <div class="rounded-15 overflow-hidden dk-theme-card-square">
                 <x-portal::admin.show-card-profile-img />
                 <div class="p-7 mt-6 text-center">
@@ -38,7 +35,7 @@
                         <a href="{{ route('instructor.course.create') }}"
                             class="btn b-solid btn-primary-solid dk-theme-card-square">
                             <i class="ri-add-circle-line text-inherit"></i>
-                            {{ translate('New course') }}
+                            {{ translate('Add New Course') }}
                         </a>
                     </div>
                 </div>
@@ -47,10 +44,10 @@
         <!-- End Instructor Profile -->
 
         <!-- Start Instructor Earning Overview -->
-        <div class="col-span-full lg:col-span-8 card">
+        <div class="col-span-full lg:col-span-12 card">
             <div class="grid grid-cols-12 gap-4 mb-4">
                 <!-- Instructor Revenue Chart -->
-                <div class="col-span-full sm:col-span-4 p-4 dk-border-one rounded-xl h-full dk-theme-card-square">
+                <div class="hidden col-span-full sm:col-span-4 p-4 dk-border-one rounded-xl h-full dk-theme-card-square">
                     <div class="flex-center-between">
                         <h6 class="leading-none text-gray-500 dark:text-dark-text font-semibold">
                             {{ translate('Purchase Amount') }} </h6>
@@ -60,7 +57,7 @@
                         <div class="pb-8 shrink-0">
                             <div class="flex items-center gap-2 mb-3">
                                 <div class="card-title text-2xl">
-                                    {{ $currencySymbol }}<span class="counter-value"
+                                    $<span class="counter-value"
                                         data-value="{{ $data['total_amount'] }}">{{ translate('0') }}</span>
                                 </div>
 
@@ -69,7 +66,7 @@
                     </div>
                 </div>
 
-                <div class="col-span-full sm:col-span-4 p-4 dk-border-one rounded-xl h-full dk-theme-card-square">
+                <div class="hidden col-span-full sm:col-span-4 p-4 dk-border-one rounded-xl h-full dk-theme-card-square">
                     <div class="flex-center-between">
                         <h6 class="leading-none text-gray-500 dark:text-dark-text font-semibold">
                             {{ translate('PlatForm Fee') }} </h6>
@@ -79,14 +76,14 @@
                         <div class="pb-8 shrink-0">
                             <div class="flex items-center gap-2 mb-3">
                                 <div class="card-title text-2xl">
-                                    {{ $currencySymbol }}<span class="counter-value"
+                                    $<span class="counter-value"
                                         data-value="{{ $data['total_platform_fee'] }}">{{ translate('0') }}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-span-full sm:col-span-4 p-4 dk-border-one rounded-xl h-full dk-theme-card-square">
+                <div class="hidden col-span-full sm:col-span-4 p-4 dk-border-one rounded-xl h-full dk-theme-card-square">
                     <div class="flex-center-between">
                         <h6 class="leading-none text-gray-500 dark:text-dark-text font-semibold">
                             {{ translate('Total Profit') }} </h6>
@@ -96,7 +93,7 @@
                         <div class="pb-8 shrink-0">
                             <div class="flex items-center gap-2 mb-3">
                                 <div class="card-title text-2xl">
-                                    {{ $currencySymbol }}<span class="counter-value"
+                                    $<span class="counter-value"
                                         data-value="{{ $data['total_amount'] - $data['total_platform_fee'] }}">{{ translate('0') }}</span>
                                 </div>
 
@@ -115,7 +112,7 @@
                         <div class="pb-8 shrink-0">
                             <div class="flex items-center gap-2 mb-3">
                                 <div class="card-title text-2xl">
-                                    {{ $currencySymbol }}<span class="counter-value"
+                                    $<span class="counter-value"
                                         data-value="{{ $user->user_balance ?? 0 }}">{{ translate('0') }}</span>
                                 </div>
 
@@ -127,7 +124,7 @@
                 <div class="col-span-full sm:col-span-4 p-4 dk-border-one rounded-xl h-full dk-theme-card-square">
                     <div class="flex-center-between">
                         <h6 class="leading-none text-gray-500 dark:text-dark-text font-semibold">
-                            {{ translate('Total Course') }} </h6>
+                            {{ translate('All Courses') }} </h6>
                     </div>
                     <div
                         class="pt-3 bg-[url('../../assets/images/card/pattern.png')] dark:bg-[url('../../assets/images/card/pattern-dark.png')] bg-no-repeat bg-100% flex gap-4 mt-3">
@@ -145,7 +142,7 @@
                 <div class="col-span-full sm:col-span-4 p-4 dk-border-one rounded-xl h-full dk-theme-card-square">
                     <div class="flex-center-between">
                         <h6 class="leading-none text-gray-500 dark:text-dark-text font-semibold">
-                            {{ translate('Total Bundles') }} </h6>
+                            {{ translate('All Bundled Courses') }} </h6>
                     </div>
                     <div
                         class="pt-3 bg-[url('../../assets/images/card/pattern.png')] dark:bg-[url('../../assets/images/card/pattern-dark.png')] bg-no-repeat bg-100% flex gap-4 mt-3">

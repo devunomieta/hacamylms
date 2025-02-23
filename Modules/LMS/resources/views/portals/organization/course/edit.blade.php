@@ -3,8 +3,11 @@
         <script src="{{ asset('lms/assets/js/vendor/sortable.min.js') }}"></script>
     @endpush
     <x-slot:title> {{ translate('Edit Course') }} </x-slot:title>
+    
     <!-- BREADCRUMB -->
-    <x-portal::admin.breadcrumb back-url="{{ route('organization.course.index') }}"title="Edit Course" page-to="Course" />
+    <x-portal::admin.breadcrumb back-url="{{ route('organization.course.index') }}" title="Edit Course" page-to="Courses" />
+    
+    
     <!-- Multi step Menu -->
     <x-portal::admin.stepper-menu type="edit" />
     <div class="mb-4">

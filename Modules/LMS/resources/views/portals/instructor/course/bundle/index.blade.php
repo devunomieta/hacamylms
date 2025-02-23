@@ -28,7 +28,7 @@
             <x-portal::course.bundle.index :bundles=$bundles />
         </div>
     @else
-        <x-portal::admin.empty-card title="You didn't create any bundle, yet."
+        <x-portal::admin.empty-card title="No bundled course yet!"
             action="{{ route('instructor.bundle.create') }}" btnText="Add New" />
     @endif
 </x-dashboard-layout>

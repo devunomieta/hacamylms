@@ -28,11 +28,11 @@
                             </th>
                             <th
                                 class="px-3.5 py-4 bg-[#F2F4F9] dark:bg-dark-card-two first:rounded-l-lg last:rounded-r-lg first:dk-theme-card-square-left last:dk-theme-card-square-right">
-                                {{ translate('Total Mark') }}
+                                {{ translate('Total Marks') }}
                             </th>
                             <th
                                 class="px-3.5 py-4 bg-[#F2F4F9] dark:bg-dark-card-two first:rounded-l-lg last:rounded-r-lg first:dk-theme-card-square-left last:dk-theme-card-square-right">
-                                {{ translate('Get Mark') }}
+                                {{ translate('Total Score') }}
                             </th>
                             <th
                                 class="px-3.5 py-4 bg-[#F2F4F9] dark:bg-dark-card-two first:rounded-l-lg last:rounded-r-lg first:dk-theme-card-square-left last:dk-theme-card-square-right">
@@ -117,8 +117,8 @@
                                         </a>
                                         <a href="{{ route('course.detail', $studentAssignment?->course?->slug) }}"
                                             class="btn b-solid btn-info-solid btn-sm dk-theme-card-square"
-                                            title="{{ translate('Go Course') }}">
-                                            {{ translate('Go Course') }}
+                                            title="{{ translate('Go to Course') }}">
+                                            {{ translate('Go to Course') }}
                                         </a>
                                     </div>
                                 </td>
@@ -131,6 +131,6 @@
             {{ $studentAssignments->links('portal::admin.pagination.paginate') }}
         </div>
     @else
-        <x-portal::admin.empty-card title="Yet, No student join this assignment" />
+        <x-portal::admin.empty-card title="No submission yet!" />
     @endif
 </x-dashboard-layout>

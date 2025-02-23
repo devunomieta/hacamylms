@@ -2,16 +2,14 @@
     $user = authCheck()?->userable;
     $translations = parse_translation($user);
 
-    $backendSetting = get_theme_option(key: 'backend_general') ?? null;
-    $currency = $backendSetting['currency'] ?? 'USD-$';
-     
 @endphp
+
 
 <x-dashboard-layout>
     <x-slot:title> {{ translate('dashboard') }} </x-slot:title>
     <div class="grid grid-cols-12 gap-x-4">
         <!-- Start Instructor Profile -->
-        <div class="col-span-full lg:col-span-4 card p-0">
+        <div class="col-span-full lg:col-span-12 card p-0">
             <div class="rounded-15 overflow-hidden dk-theme-card-square">
                 <x-portal::admin.show-card-profile-img />
                 <div class="p-7 mt-6 text-center">
@@ -47,10 +45,10 @@
         <!-- Start Instructor Earning Overview -->
 
 
-        <div class="col-span-full lg:col-span-8 card">
+        <div class="col-span-full lg:col-span-12 card">
             <div class="grid grid-cols-12 gap-4 mb-4">
                 <!-- Instructor Revenue Chart -->
-                <div class="col-span-full sm:col-span-4 p-4 dk-border-one rounded-xl h-full dk-theme-card-square">
+                <div class="hidden col-span-full sm:col-span-4 p-4 dk-border-one rounded-xl h-full dk-theme-card-square">
                     <div class="flex-center-between">
                         <h6 class="leading-none text-gray-500 dark:text-dark-text font-semibold">
                             {{ translate('Purchase Amount') }} </h6>
@@ -60,7 +58,7 @@
                         <div class="pb-8 shrink-0">
                             <div class="flex items-center gap-2 mb-3">
                                 <div class="card-title text-2xl">
-                                    {{ $currencySymbol }}<span class="counter-value"
+                                    $<span class="counter-value"
                                         data-value="{{ $data['total_amount'] }}">{{ translate('0') }}</span>
                                 </div>
 
@@ -69,7 +67,7 @@
                     </div>
                 </div>
 
-                <div class="col-span-full sm:col-span-4 p-4 dk-border-one rounded-xl h-full dk-theme-card-square">
+                <div class="hidden col-span-full sm:col-span-4 p-4 dk-border-one rounded-xl h-full dk-theme-card-square">
                     <div class="flex-center-between">
                         <h6 class="leading-none text-gray-500 dark:text-dark-text font-semibold">
                             {{ translate('PlatForm Fee') }} </h6>
@@ -79,14 +77,14 @@
                         <div class="pb-8 shrink-0">
                             <div class="flex items-center gap-2 mb-3">
                                 <div class="card-title text-2xl">
-                                    {{ $currencySymbol }}<span class="counter-value"
+                                    $<span class="counter-value"
                                         data-value="{{ $data['total_platform_fee'] }}">{{ translate('0') }}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-span-full sm:col-span-4 p-4 dk-border-one rounded-xl h-full dk-theme-card-square">
+                <div class="hidden col-span-full sm:col-span-4 p-4 dk-border-one rounded-xl h-full dk-theme-card-square">
                     <div class="flex-center-between">
                         <h6 class="leading-none text-gray-500 dark:text-dark-text font-semibold">
                             {{ translate('Total Profit') }} </h6>
@@ -96,7 +94,7 @@
                         <div class="pb-8 shrink-0">
                             <div class="flex items-center gap-2 mb-3">
                                 <div class="card-title text-2xl">
-                                    {{ $currencySymbol }}<span class="counter-value"
+                                    $<span class="counter-value"
                                         data-value="{{ $data['total_amount'] - $data['total_platform_fee'] }}">{{ translate('0') }}</span>
                                 </div>
 
@@ -115,7 +113,7 @@
                         <div class="pb-8 shrink-0">
                             <div class="flex items-center gap-2 mb-3">
                                 <div class="card-title text-2xl">
-                                    {{ $currencySymbol }}<span class="counter-value"
+                                    $<span class="counter-value"
                                         data-value="{{ $user->user_balance ?? 0 }}">{{ translate('0') }}</span>
                                 </div>
 
@@ -162,6 +160,10 @@
                 </div>
             </div>
         </div>
+
+
+
+
         @if (isset($topCourses) && !empty($topCourses))
             <div class="col-span-full card">
                 <div class="flex-center-between mb-6">

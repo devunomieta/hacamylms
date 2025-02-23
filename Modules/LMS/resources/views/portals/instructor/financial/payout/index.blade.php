@@ -1,25 +1,17 @@
-@php
-    $backendSetting = get_theme_option(key: 'backend_general') ?? null;
-    $currency = $backendSetting['currency'] ?? 'USD-$';
-     
-@endphp
-
-
 <x-dashboard-layout>
-    <x-slot:title>{{ translate('Payout/manage') }}</x-slot:title>
+    <x-slot:title>{{ translate('Payout Manager') }}</x-slot:title>
     <!-- BREADCRUMB -->
     <x-portal::admin.breadcrumb title="Payout Report" page-to="Payout" />
     <div class="card">
         <div class="grid grid-cols-12 gap-4">
-            <x-portal::admin.course-overview-card color-type="primary" title="Total Request Amount"
-                value="{{ $currencySymbol }}{{ $reports['total_request_amount'] ?? 0 }}" />
-            <x-portal::admin.course-overview-card color-type="info" title="Total Pending Amount"
-                value="{{ $currencySymbol }}{{ $reports['total_pending_amount'] ?? 0 }}" />
-            <x-portal::admin.course-overview-card color-type="success" title="Total Paid Amount"
-                value="{{ $currencySymbol }}{{ $reports['total_paid_amount'] ?? 0 }}" />
-
-            <x-portal::admin.course-overview-card title="Available Payout Amount"
+            <x-portal::admin.course-overview-card color-type="primary" title="Payable Amount"
                 value="${{ authcheck()->userable?->user_balance ?? 0 }}" />
+            <x-portal::admin.course-overview-card color-type="warning" title="Total Requested Amount"
+                value="${{ $reports['total_request_amount'] ?? 0 }}" />
+            <x-portal::admin.course-overview-card color-type="success" title="Total Payouts"
+                value="${{ $reports['total_paid_amount'] ?? 0 }}" />
+            <x-portal::admin.course-overview-card color-type="info" title="Total Pending Amount"
+                value="${{ $reports['total_pending_amount'] ?? 0 }}" />
         </div>
     </div>
     <div class="card flex justify-end">
@@ -59,7 +51,7 @@
                                     <h6 class="text-md leading-none"> <a
                                             href="#">{{ $payoutHistory->payout_number }}</a> </h6>
                                 </td>
-                                <td class="px-3.5 py-4">{{ $currencySymbol }}{{ $payoutHistory->amount }}</td>
+                                <td class="px-3.5 py-4">${{ $payoutHistory->amount }}</td>
                                 <td class="px-3.5 py-4">
                                     {{ customDateFormate($payoutHistory->created_at, $format = 'd M y h:i A') }}</td>
                                 <td class="px-3.5 py-4">{{ translate($payoutHistory->status) }}</td>
@@ -93,15 +85,14 @@
                 <form action="{{ route('instructor.payout.request') }}" method="post" class="form">
                     @csrf
                     <div class="grid grid-cols-12 gap-x-4">
-                        <div class="col-span-full md:col-span-8 card">
+                        <div class="col-span-full md:col-span-12 card">
 
                             <div class="flex justify-center gap-3">
                                 <div>
                                     <h2>{{ translate('Available Amount') }}</h2>
                                 </div>
                                 <div>
-                                    <strong>
-                                        {{ $currencySymbol }}{{ authcheck()->userable?->user_balance ?? 0 }}</strong>
+                                    <strong> ${{ authcheck()->userable?->user_balance ?? 0 }}</strong>
                                 </div>
                             </div>
                             <button type="submit" class="btn b-solid btn-primary-solid dk-theme-card-square">

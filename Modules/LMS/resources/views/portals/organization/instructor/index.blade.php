@@ -1,7 +1,7 @@
 <x-dashboard-layout>
-    <x-slot:title> {{ translate('Instructor Manage') }} </x-slot:title>
+    <x-slot:title> {{ translate('Manage Tutors') }} </x-slot:title>
     <!-- BREADCRUMB -->
-    <x-portal::admin.breadcrumb title="All your Instructor" page-to="Instructor"
+    <x-portal::admin.breadcrumb title="All Org Tutors" page-to="Tutors"
         action-route="{{ route('organization.instructor.create') }}" />
 
 

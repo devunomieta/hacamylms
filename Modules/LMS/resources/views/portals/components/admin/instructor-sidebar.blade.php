@@ -21,7 +21,7 @@
                         </span>
                         <span
                             class="group-data-[sidebar-size=sm]:hidden group-data-[sidebar-size=sm]:ml-6 rtl:group-data-[sidebar-size=sm]:ml-0 rtl:group-data-[sidebar-size=sm]:mr-6 group-data-[sidebar-size=sm]:group-hover/sm:block ml-3 rtl:ml-0 rtl:mr-3 shrink-0">
-                            {{ translate('Dashboard') }}
+                            {{ translate('My Dashboard') }}
                         </span>
                     </a>
                 </li>
@@ -38,7 +38,7 @@
                         </span>
                         <span
                             class="group-data-[sidebar-size=sm]:hidden group-data-[sidebar-size=sm]:ml-6 rtl:group-data-[sidebar-size=sm]:ml-0 rtl:group-data-[sidebar-size=sm]:mr-6 group-data-[sidebar-size=sm]:group-hover/sm:block ml-3 rtl:ml-0 rtl:mr-3 shrink-0">
-                            {{ translate('Course Manage') }}
+                            {{ translate('Course Manager') }}
                         </span>
                     </a>
                     <div
@@ -47,12 +47,12 @@
                             <li class="relative group/sub">
                                 <a href="{{ route('instructor.course.index') }}"
                                     class="relative peer/link text-gray-500 dark:text-dark-text-two leading-none px-5 py-2.5 group-data-[sidebar-size=lg]:pl-8 rtl:group-data-[sidebar-size=lg]:pr-8 flex hover:text-primary-500 dark:hover:text-dark-text [&.active]:text-primary-500 dark:[&.active]:text-dark-text before:absolute before:top-[49%] before:-translate-y-1/2 before:left-4 rtl:before:left-auto rtl:before:right-4 before:size-1.5 before:rounded-50 before:border before:border-gray-400 dark:before:border-text-dark hover:before:border-none hover:before:bg-primary-400 dark:hover:before:bg-text-dark [&.active]:before:border-none group-data-[sidebar-size=sm]:after:block group-data-[sidebar-size=sm]:after:right-3 [&.active]:before:bg-primary-400 dark:[&.active]:before:bg-text-dark group-data-[sidebar-size=sm]:before:hidden {{ request()->routeIs('instructor.course.*') ? 'active' : '' }}">
-                                    {{ translate('Course') }}
+                                    {{ translate('Courses') }}
                                 </a>
 
                                 <a href="{{ route('instructor.bundle.index') }}"
                                     class="relative peer/link text-gray-500 dark:text-dark-text-two leading-none px-5 py-2.5 group-data-[sidebar-size=lg]:pl-8 rtl:group-data-[sidebar-size=lg]:pr-8 flex hover:text-primary-500 dark:hover:text-dark-text [&.active]:text-primary-500 dark:[&.active]:text-dark-text before:absolute before:top-[49%] before:-translate-y-1/2 before:left-4 rtl:before:left-auto rtl:before:right-4 before:size-1.5 before:rounded-50 before:border before:border-gray-400 dark:before:border-text-dark hover:before:border-none hover:before:bg-primary-400 dark:hover:before:bg-text-dark [&.active]:before:border-none group-data-[sidebar-size=sm]:after:block group-data-[sidebar-size=sm]:after:right-3 [&.active]:before:bg-primary-400 dark:[&.active]:before:bg-text-dark group-data-[sidebar-size=sm]:before:hidden {{ request()->routeIs('instructor.bundle.*') ? 'active' : '' }}">
-                                    {{ translate('Bundle Course') }}
+                                    {{ translate('Bundled Course') }}
                                 </a>
                             </li>
                         </ul>
@@ -71,7 +71,7 @@
                         </span>
                         <span
                             class="group-data-[sidebar-size=sm]:hidden group-data-[sidebar-size=sm]:ml-6 rtl:group-data-[sidebar-size=sm]:ml-0 rtl:group-data-[sidebar-size=sm]:mr-6 group-data-[sidebar-size=sm]:group-hover/sm:block ml-3 rtl:ml-0 rtl:mr-3 shrink-0">
-                            {{ translate('My Student') }}
+                            {{ translate('My Students') }}
                         </span>
                     </a>
                 </li>
@@ -97,7 +97,7 @@
                             <li class="relative group/sub">
                                 <a href="{{ route('instructor.quiz.list') }}"
                                     class="relative peer/link text-gray-500 dark:text-dark-text-two leading-none px-5 py-2.5 group-data-[sidebar-size=lg]:pl-8 rtl:group-data-[sidebar-size=lg]:pr-8 flex hover:text-primary-500 dark:hover:text-dark-text [&.active]:text-primary-500 dark:[&.active]:text-dark-text before:absolute before:top-[49%] before:-translate-y-1/2 before:left-4 rtl:before:left-auto rtl:before:right-4 before:size-1.5 before:rounded-50 before:border before:border-gray-400 dark:before:border-text-dark hover:before:border-none hover:before:bg-primary-400 dark:hover:before:bg-text-dark [&.active]:before:border-none group-data-[sidebar-size=sm]:after:block group-data-[sidebar-size=sm]:after:right-3 [&.active]:before:bg-primary-400 dark:[&.active]:before:bg-text-dark group-data-[sidebar-size=sm]:before:hidden {{ request()->routeIs('instructor.quiz.list') ? 'active' : '' }}">
-                                    {{ translate('All') }}
+                                    {{ translate('All Quizzes') }}
                                 </a>
                             </li>
                         </ul>
@@ -135,7 +135,7 @@
                         </span>
                         <span
                             class="group-data-[sidebar-size=sm]:hidden group-data-[sidebar-size=sm]:ml-6 group-data-[sidebar-size=sm]:group-hover/sm:block ml-3 shrink-0">
-                            {{ translate('Review') }}
+                            {{ translate('Review Manager') }}
                         </span>
                     </a>
                 </li>
@@ -154,7 +154,7 @@
                         </span>
                         <span
                             class="group-data-[sidebar-size=sm]:hidden group-data-[sidebar-size=sm]:ml-6 rtl:group-data-[sidebar-size=sm]:ml-0 rtl:group-data-[sidebar-size=sm]:mr-6 group-data-[sidebar-size=sm]:group-hover/sm:block ml-3 rtl:ml-0 rtl:mr-3 shrink-0">
-                            {{ translate('Financial') }}
+                            {{ translate('Finance Manager') }}
                         </span>
                     </a>
                     <div
@@ -163,13 +163,13 @@
                             <li class="relative group/sub">
                                 <a href="{{ route('instructor.sale.index') }}"
                                     class=" {{ is_active_menu('instructor.sale.index') ? 'active' : '' }} relative peer/link text-gray-500 dark:text-dark-text-two leading-none px-5 py-2.5 group-data-[sidebar-size=lg]:pl-8 rtl:group-data-[sidebar-size=lg]:pr-8 flex hover:text-primary-500 dark:hover:text-dark-text [&.active]:text-primary-500 dark:[&.active]:text-dark-text before:absolute before:top-[49%] before:-translate-y-1/2 before:left-4 rtl:before:left-auto rtl:before:right-4 before:size-1.5 before:rounded-50 before:border before:border-gray-400 dark:before:border-text-dark hover:before:border-none hover:before:bg-primary-400 dark:hover:before:bg-text-dark [&.active]:before:border-none group-data-[sidebar-size=sm]:after:block group-data-[sidebar-size=sm]:after:right-3 [&.active]:before:bg-primary-400 dark:[&.active]:before:bg-text-dark group-data-[sidebar-size=sm]:before:hidden">
-                                    {{ translate('Sale') }}
+                                    {{ translate('Sales') }}
                                 </a>
                             </li>
                             <li class="relative group/sub">
                                 <a href="{{ route('instructor.payout.index') }}"
                                     class=" {{ is_active_menu('instructor.payout.index') ? 'active' : '' }} relative peer/link text-gray-500 dark:text-dark-text-two leading-none px-5 py-2.5 group-data-[sidebar-size=lg]:pl-8 rtl:group-data-[sidebar-size=lg]:pr-8 flex hover:text-primary-500 dark:hover:text-dark-text [&.active]:text-primary-500 dark:[&.active]:text-dark-text before:absolute before:top-[49%] before:-translate-y-1/2 before:left-4 rtl:before:left-auto rtl:before:right-4 before:size-1.5 before:rounded-50 before:border before:border-gray-400 dark:before:border-text-dark hover:before:border-none hover:before:bg-primary-400 dark:hover:before:bg-text-dark [&.active]:before:border-none group-data-[sidebar-size=sm]:after:block group-data-[sidebar-size=sm]:after:right-3 [&.active]:before:bg-primary-400 dark:[&.active]:before:bg-text-dark group-data-[sidebar-size=sm]:before:hidden">
-                                    {{ translate('Payout') }}
+                                    {{ translate('Payouts') }}
                                 </a>
                             </li>
 
@@ -232,7 +232,7 @@
                         </span>
                         <span
                             class="group-data-[sidebar-size=sm]:hidden group-data-[sidebar-size=sm]:ml-6 rtl:group-data-[sidebar-size=sm]:ml-0 rtl:group-data-[sidebar-size=sm]:mr-6 group-data-[sidebar-size=sm]:group-hover/sm:block ml-3 rtl:ml-0 rtl:mr-3 shrink-0">
-                            {{ translate('Support Manage') }}
+                            {{ translate('Contacts & Support') }}
                         </span>
                     </a>
                     <div
@@ -245,11 +245,11 @@
                                 </a>
                                 <a href="{{ route('instructor.supports.index') }}"
                                     class="relative peer/link text-gray-500 dark:text-dark-text-two leading-none px-5 py-2.5 group-data-[sidebar-size=lg]:pl-8 rtl:group-data-[sidebar-size=lg]:pr-8 flex hover:text-primary-500 dark:hover:text-dark-text [&.active]:text-primary-500 dark:[&.active]:text-dark-text before:absolute before:top-[49%] before:-translate-y-1/2 before:left-4 rtl:before:left-auto rtl:before:right-4 before:size-1.5 before:rounded-50 before:border before:border-gray-400 dark:before:border-text-dark hover:before:border-none hover:before:bg-primary-400 dark:hover:before:bg-text-dark [&.active]:before:border-none group-data-[sidebar-size=sm]:after:block group-data-[sidebar-size=sm]:after:right-3 [&.active]:before:bg-primary-400 dark:[&.active]:before:bg-text-dark group-data-[sidebar-size=sm]:before:hidden {{ request()->routeIs('instructor.supports.index') ? 'active' : '' }}">
-                                    {{ translate('Ticket') }}
+                                    {{ translate('Tickets') }}
                                 </a>
                                 <a href="{{ route('instructor.student.support') }}"
                                     class="relative peer/link text-gray-500 dark:text-dark-text-two leading-none px-5 py-2.5 group-data-[sidebar-size=lg]:pl-8 rtl:group-data-[sidebar-size=lg]:pr-8 flex hover:text-primary-500 dark:hover:text-dark-text [&.active]:text-primary-500 dark:[&.active]:text-dark-text before:absolute before:top-[49%] before:-translate-y-1/2 before:left-4 rtl:before:left-auto rtl:before:right-4 before:size-1.5 before:rounded-50 before:border before:border-gray-400 dark:before:border-text-dark hover:before:border-none hover:before:bg-primary-400 dark:hover:before:bg-text-dark [&.active]:before:border-none group-data-[sidebar-size=sm]:after:block group-data-[sidebar-size=sm]:after:right-3 [&.active]:before:bg-primary-400 dark:[&.active]:before:bg-text-dark group-data-[sidebar-size=sm]:before:hidden {{ request()->routeIs('instructor.student.support') ? 'active' : '' }}">
-                                    {{ translate('Student Support') }}
+                                    {{ translate('Students Support') }}
                                 </a>
 
                             </li>

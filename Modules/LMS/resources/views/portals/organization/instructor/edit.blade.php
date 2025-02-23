@@ -10,10 +10,10 @@
 
 
 <x-dashboard-layout>
-    <x-slot:title>{{ translate('Edit Instructor') }}</x-slot:title>
+    <x-slot:title>{{ translate('Edit Tutor Profile') }}</x-slot:title>
     <!-- BREADCRUMB -->
-    <x-portal::admin.breadcrumb title="Edit" back-url="{{ route('organization.instructor.index') }}"
-        page-to="Instructor" />
+    <x-portal::admin.breadcrumb title="Edit Tutor Profile" back-url="{{ route('organization.instructor.index') }}"
+        page-to="Tutors" />
 
     @if (is_active('organization.instructor.translate') === 'active')
         <div class="flex items-center justify-end gap-4 mb-2">

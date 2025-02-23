@@ -4,8 +4,7 @@
     @endpush
     <x-slot:title> {{ translate('Create Course') }} </x-slot:title>
     <!-- BREADCRUMB -->
-    <x-portal::admin.breadcrumb back-url="{{ route('organization.course.index') }}" title="Create Course"
-        page-to="Course" />
+    <x-portal::admin.breadcrumb back-url="{{ route('organization.course.index') }}" title="Create Course" page-to="Courses" />
     <div class="justify-end">
         <span class="text-danger error-text  course_id_err"></span>
     </div>

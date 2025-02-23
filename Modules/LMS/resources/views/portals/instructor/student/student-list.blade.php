@@ -1,5 +1,5 @@
 <x-dashboard-layout>
-    <x-slot:title> {{ translate('Student/setting') }} </x-slot:title>
+    <x-slot:title> {{ translate('Student Settings') }} </x-slot:title>
     <!-- BREADCRUMB -->
     <x-portal::admin.breadcrumb title="All Student" page-to="Student" />
     @if ($students->count() > 0)

@@ -1,5 +1,5 @@
 <x-dashboard-layout>
-    <x-slot:title> {{ translate('Notices Board Manage') }} </x-slot:title>
+    <x-slot:title> {{ translate('Notice Board Manager') }} </x-slot:title>
     <!-- BREADCRUMB -->
     <x-portal::admin.breadcrumb title="Notice Board List" page-to="Notice Board"
         action-route="{{ route('instructor.noticeboard.create') }}" />
@@ -10,7 +10,7 @@
             <x-portal::noticeboard.index :noticesBoards=$noticesBoards />
         </div>
     @else
-        <x-portal::admin.empty-card title="You didn't create any notice for your student."
+        <x-portal::admin.empty-card title="No Notice Yet!"
             action="{{ route('instructor.noticeboard.create') }}" btnText="Add New" />
     @endif
 </x-dashboard-layout>
